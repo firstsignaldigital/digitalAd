@@ -10,14 +10,22 @@ import ContactForm from "/src/components/contact/ContactForm";
 import OfficeInfo from "/src/components/contact/OfficeInfo";
 import MapSection from "/src/components/contact/MapSection";
 import SocialLinks from "/src/components/common/SocialLinks";
+import SEO from "/src/components/SEO";
+import keywordMap from "/src/data/keywordMap";
 
 export default function Contact() {
+    const kw = keywordMap["/contact"];
     return (
         <>
+            <SEO
+                route="/contact"
+                title={kw.title}
+                description={kw.metaDescription}
+            />
 
             {/* ================= HERO ================= */}
 
-            <section className="relative overflow-hidden bg-linear-to-br from-slate-950 via-blue-950 to-slate-900 py-28 text-white">
+            <section className="relative overflow-hidden bg-linear-to-br from-blue-950 via-blue-900 to-blue-800 py-28 text-white">
 
                 {/* Background Glow */}
 
@@ -40,17 +48,17 @@ export default function Contact() {
 
                         <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.30em] text-cyan-300">
 
-                            CONTACT AD DIGITAL SOLUTIONS
+                            CONTACT FIRST SIGNAL DIGITAL
 
                         </span>
 
                         <h1 className="mt-8 text-5xl font-bold leading-tight md:text-7xl">
 
-                            Let's Build Something
+                            Contact First Signal Digital
 
                             <span className="block text-cyan-300">
 
-                                Exceptional Together.
+                                in Rohtak
 
                             </span>
 
@@ -58,10 +66,10 @@ export default function Contact() {
 
                         <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-300">
 
-                            Whether you're looking to launch a professional website,
-                            build an enterprise SaaS platform, implement Artificial
-                            Intelligence, create engaging media content or accelerate
-                            your digital growth—we're ready to help.
+                            Whether you're in Rohtak or anywhere in India, we're
+                            ready to help — launch a professional website, build
+                            a SaaS platform, implement AI, produce media content
+                            or grow your business through digital marketing.
 
                         </p>
 

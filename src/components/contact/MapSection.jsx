@@ -5,7 +5,7 @@ import {
 
 export default function MapSection() {
     const directionsUrl =
-        "https://maps.google.com/?q=Aryadahiya+Media+Network+Pvt.+Ltd.+Rohtak";
+        "https://maps.app.goo.gl/omJBEWd6Qf1aykSq7";
 
     return (
         <section className="py-24 bg-slate-50">
@@ -61,13 +61,13 @@ export default function MapSection() {
 
                                 <h3 className="text-xl font-bold text-slate-900">
 
-                                    AD Digital Solutions
+                                    First Signal Digital
 
                                 </h3>
 
                                 <p className="mt-3 leading-7 text-slate-600">
 
-                                    Aryadahiya Media Network Pvt. Ltd.
+                                    First Signal Digital
 
                                     <br />
 
@@ -104,7 +104,7 @@ export default function MapSection() {
                     {/* Google Map */}
 
                     <iframe
-                        title="AD Digital Solutions Office"
+                        title="First Signal Digital Office"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.3231199940547!2d76.59211967551026!3d28.8887447755259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d850c9ed9adfd%3A0x34f70825a7a29127!2sAryadahiya%20Media%20Network%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1783420529122!5m2!1sen!2sin"
                         width="100%"
                         height="550"

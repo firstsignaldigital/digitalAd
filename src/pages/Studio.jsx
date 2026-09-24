@@ -12,6 +12,9 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import SEO from "/src/components/SEO";
+import keywordMap from "/src/data/keywordMap";
+
 const studioServices = [
     {
         icon: Camera,
@@ -59,11 +62,18 @@ const idealFor = [
 ];
 
 export default function Studio() {
+    const kw = keywordMap["/studio"];
     return (
         <>
+            <SEO
+                route="/studio"
+                title={kw.title}
+                description={kw.metaDescription}
+            />
+
             {/* Hero */}
 
-            <section className="bg-linear-to-br from-slate-950 via-blue-950 to-slate-900 pt-36 pb-24 text-white">
+            <section className="bg-linear-to-br from-blue-950 via-blue-900 to-blue-800 pt-36 pb-24 text-white">
 
                 <div className="mx-auto max-w-7xl px-6">
 
@@ -82,9 +92,9 @@ export default function Studio() {
 
                         <h1 className="mt-8 text-5xl font-bold leading-tight md:text-6xl">
 
-                            Where Technology
+                            Media Production Studio
                             <span className="block text-cyan-300">
-                                Meets Creative Storytelling.
+                                in Rohtak.
                             </span>
 
                         </h1>
@@ -134,7 +144,7 @@ export default function Studio() {
 
                     </div>
 
-                    <div className="rounded-[32px] bg-slate-900 p-10 text-white">
+                    <div className="rounded-[32px] bg-blue-900 p-10 text-white">
 
                         <h3 className="text-2xl font-bold">
 
@@ -323,7 +333,7 @@ export default function Studio() {
 
             {/* CTA */}
 
-            <section className="bg-slate-950 py-24 text-white">
+            <section className="bg-blue-950 py-24 text-white">
 
                 <div className="mx-auto max-w-4xl px-6 text-center">
 

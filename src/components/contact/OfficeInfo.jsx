@@ -9,14 +9,14 @@ import {
 
 export default function OfficeInfo() {
     const address =
-        "Aryadahiya Media Network Pvt. Ltd., Old ITI, Plot No. 110, Jagdish Colony, Rohtak, Haryana 124001";
+        "First Signal Digital, Old ITI, Plot No. 110, Jagdish Colony, Rohtak, Haryana 124001";
 
     const phone = "+91 98170 48962";
 
     const email = "info@admedianetwork.in";
 
     const directionsUrl =
-        "https://maps.google.com/?q=Aryadahiya+Media+Network+Pvt.+Ltd.+Rohtak";
+        "https://maps.app.goo.gl/omJBEWd6Qf1aykSq7";
 
     const whatsappUrl =
         "https://wa.me/919817048962";
@@ -42,7 +42,7 @@ export default function OfficeInfo() {
 
                 <h2 className="mt-6 text-4xl font-bold leading-tight">
 
-                    AD Digital Solutions
+                    First Signal Digital
 
                 </h2>
 
@@ -87,7 +87,7 @@ export default function OfficeInfo() {
                             <a
                                 href={directionsUrl}
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-cyan-500 px-5 py-3 font-semibold text-slate-900 transition hover:scale-105"
                             >
 
@@ -184,7 +184,7 @@ export default function OfficeInfo() {
                             <a
                                 href={whatsappUrl}
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 className="font-semibold hover:text-cyan-300"
                             >
 

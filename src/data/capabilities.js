@@ -1,4 +1,4 @@
-import {
+﻿import {
     BrainCircuit,
     Code2,
     Clapperboard,
@@ -12,6 +12,7 @@ import {
 const capabilities = [
     {
         id: 1,
+        url: "/services/ai-solutions",
         title: "Artificial Intelligence",
         icon: BrainCircuit,
         description:
@@ -29,6 +30,7 @@ const capabilities = [
 
     {
         id: 2,
+        url: "/services/software-development",
         title: "Software Engineering",
         icon: Code2,
         description:
@@ -46,6 +48,7 @@ const capabilities = [
 
     {
         id: 3,
+        url: "/services/media-production",
         title: "Creative Media",
         icon: Clapperboard,
         description:
@@ -63,6 +66,7 @@ const capabilities = [
 
     {
         id: 4,
+        url: "/marketing",
         title: "Digital Growth",
         icon: TrendingUp,
         description:
@@ -80,6 +84,7 @@ const capabilities = [
 
     {
         id: 5,
+        url: "/services/digital-transformation",
         title: "Business Transformation",
         icon: BriefcaseBusiness,
         description:

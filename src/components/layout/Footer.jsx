@@ -11,34 +11,34 @@ import SocialLinks from "../common/SocialLinks";
 const quickLinks = [
     { title: "Home", url: "/" },
     { title: "About Us", url: "/about" },
-    { title: "Capabilities", url: "/capabilities" },
-    { title: "Platforms", url: "/platforms" },
-    { title: "Media Studio", url: "/media-studio" },
-    { title: "Industries", url: "/industries" },
+    { title: "Capabilities", url: "/services" },
+    { title: "Platforms", url: "/solutions" },
+    { title: "Media Studio", url: "/studio" },
+    { title: "Industries", url: "/" },
     { title: "Contact", url: "/contact" },
 ];
 
 const capabilities = [
-    "Artificial Intelligence",
-    "Enterprise Software",
-    "Web Development",
-    "Mobile Applications",
-    "Digital Marketing",
-    "Media Production",
+    { label: "Artificial Intelligence", url: "/services/ai-solutions" },
+    { label: "Software Development", url: "/services/software-development" },
+    { label: "Web Development", url: "/services/website-development" },
+    { label: "Mobile Applications", url: "/services/mobile-app-development" },
+    { label: "Digital Marketing", url: "/marketing" },
+    { label: "Media Production", url: "/services/media-production" },
 ];
 
 const platforms = [
-    "Attendance SaaS",
-    "CRM Solutions",
-    "HRMS",
-    "Custom ERP",
-    "Business Automation",
-    "AI Assistants",
+    { label: "Attendance SaaS", url: "/solutions/hrms" },
+    { label: "CRM Solutions", url: "/solutions/crm" },
+    { label: "HRMS", url: "/solutions/hrms" },
+    { label: "Custom ERP", url: "/solutions/erp" },
+    { label: "Business Automation", url: "/solutions" },
+    { label: "AI Assistants", url: "/services/ai-solutions" },
 ];
 
 export default function Footer() {
     return (
-        <footer className="bg-slate-950 text-slate-300">
+        <footer className="bg-blue-950 text-slate-300">
 
             {/* Main Footer */}
 
@@ -59,24 +59,20 @@ export default function Footer() {
 
                             {/* Replace with your SVG logo */}
 
-                            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 text-xl font-bold text-white">
-
-                                AD
-
-                            </div>
+                            <img src="/logo.jpeg" alt="First Signal Digital logo" width="56" height="56" className="h-14 w-14 rounded-2xl object-contain" />
 
                             <div>
 
                                 <h2 className="text-2xl font-bold text-white">
 
-                                    AD Digital Solutions
+                                    First Signal Digital
 
                                 </h2>
 
                                 <p className="text-sm text-cyan-300">
 
-                                    Digital Transformation &
-                                    Media Solutions
+                                    Digital Marketing, Technology &amp;
+                                    Media Services
 
                                 </p>
 
@@ -92,6 +88,19 @@ export default function Footer() {
                             media, branding and digital marketing.
 
                         </p>
+
+                        <a
+                            href="https://maps.app.goo.gl/omJBEWd6Qf1aykSq7"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-8 inline-flex items-center gap-3 text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
+                        >
+
+                            <MapPin size={18} />
+
+                            Rohtak, Haryana 124001
+
+                        </a>
 
                         <div className="mt-10">
 
@@ -158,21 +167,31 @@ export default function Footer() {
                         <ul className="mt-8 space-y-4">
 
                             {capabilities.map((item) => (
-
-                                <li
-                                    key={item}
-                                    className="flex items-center gap-2"
-                                >
-
-                                    <ChevronRight
-                                        size={16}
-                                        className="text-cyan-400"
-                                    />
-
-                                    {item}
-
-                                </li>
-
+                                typeof item === "string" ? (
+                                    <li
+                                        key={item}
+                                        className="flex items-center gap-2"
+                                    >
+                                        <ChevronRight
+                                            size={16}
+                                            className="text-cyan-400"
+                                        />
+                                        {item}
+                                    </li>
+                                ) : (
+                                    <li key={item.label}>
+                                        <Link
+                                            to={item.url}
+                                            className="group flex items-center gap-2 transition hover:text-white"
+                                        >
+                                            <ChevronRight
+                                                size={16}
+                                                className="text-cyan-400"
+                                            />
+                                            {item.label}
+                                        </Link>
+                                    </li>
+                                )
                             ))}
 
                         </ul>
@@ -196,16 +215,22 @@ export default function Footer() {
                             {platforms.map((item) => (
 
                                 <li
-                                    key={item}
-                                    className="flex items-center gap-2"
+                                    key={item.label}
                                 >
 
-                                    <ChevronRight
-                                        size={16}
-                                        className="text-cyan-400"
-                                    />
+                                    <Link
+                                        to={item.url}
+                                        className="group flex items-center gap-2 transition hover:text-white"
+                                    >
 
-                                    {item}
+                                        <ChevronRight
+                                            size={16}
+                                            className="text-cyan-400"
+                                        />
+
+                                        {item.label}
+
+                                    </Link>
 
                                 </li>
 
@@ -226,7 +251,7 @@ export default function Footer() {
                 <div className="grid gap-8 md:grid-cols-3">
 
                     <a
-                        href="https://maps.google.com/?q=Aryadahiya+Media+Network+Pvt.+Ltd.+Rohtak"
+                        href="https://maps.app.goo.gl/omJBEWd6Qf1aykSq7"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex items-start gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-cyan-500/40 hover:bg-white/10"
@@ -251,7 +276,7 @@ export default function Footer() {
 
                             <p className="mt-2 text-sm leading-7">
 
-                                Aryadahiya Media Network Pvt. Ltd.
+                                First Signal Digital
 
                                 <br />
 
@@ -352,7 +377,7 @@ export default function Footer() {
 
                             <p className="text-sm text-slate-400">
 
-                                © {new Date().getFullYear()} AD Digital Solutions.
+                                © {new Date().getFullYear()} First Signal Digital.
                                 All rights reserved.
 
                             </p>

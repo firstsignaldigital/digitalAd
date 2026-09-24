@@ -127,7 +127,9 @@ export default function ConnectCard() {
 
                         <div className="flex flex-wrap gap-3">
 
-                            {social.map((item) => {
+                            {social
+                                .filter((item) => item.url && item.url !== "#")
+                                .map((item) => {
 
                                 const Icon = item.icon;
 
@@ -137,7 +139,7 @@ export default function ConnectCard() {
                                         key={item.title}
                                         href={item.url}
                                         target="_blank"
-                                        rel="noreferrer"
+                                        rel="noopener noreferrer"
                                         className="
                                             flex
                                             h-11

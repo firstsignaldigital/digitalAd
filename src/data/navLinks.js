@@ -20,6 +20,10 @@ const navLinks = [
     path: "/solutions",
   },
   {
+    title: "Marketing",
+    path: "/marketing",
+  },
+  {
     title: "Studio",
     path: "/studio",
   },

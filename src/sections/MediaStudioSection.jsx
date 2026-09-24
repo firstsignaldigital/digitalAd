@@ -4,6 +4,7 @@ import {
     Camera,
     PlayCircle,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import PrimaryButton from "/src/components/ui/PrimaryButton";
 import FloatingBadge from "/src/components/ui/FloatingBadge";
@@ -232,17 +233,20 @@ export default function MediaStudioSection() {
 
                         <div className="mt-12 flex flex-wrap gap-4">
 
-                            <PrimaryButton>
+                            <PrimaryButton to="/contact">
 
                                 Book Studio Visit
 
                             </PrimaryButton>
 
-                            <button className="rounded-full border border-slate-300 px-8 py-4 font-semibold transition hover:bg-slate-100">
+                            <Link
+                                to="/studio"
+                                className="rounded-full border border-slate-300 px-8 py-4 font-semibold transition hover:bg-slate-100"
+                            >
 
                                 View Portfolio
 
-                            </button>
+                            </Link>
 
                         </div>
 

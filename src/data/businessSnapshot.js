@@ -159,7 +159,7 @@ export const businessSnapshot = {
     =========================== */
 
     contact: {
-        company: "AD Digital Solutions",
+        company: "First Signal Digital",
         tagline: "Digital Transformation & Media Solutions",
 
         phone: "+91 98170 48962",
@@ -171,7 +171,7 @@ export const businessSnapshot = {
         website: "https://www.admedianetwork.in",
 
         address: [
-        "Aryadahiya Media Network Pvt. Ltd.",
+        "First Signal Digital",
         "Old ITI, Plot No.110",
         "Jagdish Colony",
         "Rohtak, Haryana 124001",
@@ -187,12 +187,12 @@ export const businessSnapshot = {
     {
         icon: FaFacebook,
         title: "Facebook",
-        url: "https://www.facebook.com/share/1BgkaL2RwK/",
+        url: "https://www.facebook.com/firstsignaldigital/",
     },
     {
         icon: FaInstagram,
         title: "Instagram",
-        url: "https://www.instagram.com/ad_media_global",
+        url: "https://www.instagram.com/firstsignaldigital8/",
     },
     {
         icon: FaYoutube,

@@ -16,6 +16,7 @@ import {
 const products = [
     {
         title: "CRM Platform",
+        url: "/solutions/crm",
         category: "Sales",
         icon: Users,
         description:
@@ -23,6 +24,7 @@ const products = [
     },
     {
         title: "HRMS",
+        url: "/solutions/hrms",
         category: "Human Resources",
         icon: Building2,
         description:
@@ -30,6 +32,7 @@ const products = [
     },
     {
         title: "School ERP",
+        url: "/solutions/education-management",
         category: "Education",
         icon: GraduationCap,
         description:
@@ -37,6 +40,7 @@ const products = [
     },
     {
         title: "Hospital Management",
+        url: "/solutions/hospital-management",
         category: "Healthcare",
         icon: Hospital,
         description:
@@ -44,6 +48,7 @@ const products = [
     },
     {
         title: "Inventory Management",
+        url: "/solutions/inventory-management",
         category: "Business",
         icon: Boxes,
         description:
@@ -51,6 +56,7 @@ const products = [
     },
     {
         title: "Billing & POS",
+        url: "/solutions/billing-and-pos",
         category: "Retail",
         icon: Receipt,
         description:
@@ -58,6 +64,7 @@ const products = [
     },
     {
         title: "Document Management",
+        url: "/solutions",
         category: "Enterprise",
         icon: FileText,
         description:
@@ -65,6 +72,7 @@ const products = [
     },
     {
         title: "Attendance System",
+        url: "/solutions/hrms",
         category: "Workforce",
         icon: ClipboardCheck,
         description:
@@ -72,6 +80,7 @@ const products = [
     },
     {
         title: "Visitor Management",
+        url: "/solutions",
         category: "Security",
         icon: UserCheck,
         description:
@@ -79,6 +88,7 @@ const products = [
     },
     {
         title: "Loan Management",
+        url: "/solutions",
         category: "Finance",
         icon: Wallet,
         description:
@@ -86,6 +96,7 @@ const products = [
     },
     {
         title: "Compliance Manager",
+        url: "/solutions/business-compliance",
         category: "Enterprise",
         icon: ShieldCheck,
         description:
@@ -93,6 +104,7 @@ const products = [
     },
     {
         title: "AI Helpdesk",
+        url: "/services/ai-solutions",
         category: "Artificial Intelligence",
         icon: Bot,
         description:

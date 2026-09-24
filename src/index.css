@@ -1,7 +1,23 @@
 @import "tailwindcss";
 
+@theme {
+    --color-blue-300: #7ab2f5;
+    --color-blue-400: #4a90ee;
+    --color-blue-500: #2f7df6;
+    --color-blue-600: #2178e0;
+    --color-blue-700: #1654a8;
+    --color-blue-800: #123f7e;
+    --color-blue-900: #0f2f61;
+    --color-blue-950: #081d42;
+    --color-cyan-300: #5ce0f7;
+    --color-cyan-400: #2fd3f0;
+    --color-cyan-500: #17b9dc;
+    --color-cyan-600: #0f9cc4;
+}
+
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
 }
 
 body {
@@ -30,6 +46,11 @@ img {
 
 button {
     cursor: pointer;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-cyan-600);
+    outline-offset: 2px;
 }
 
 .section {

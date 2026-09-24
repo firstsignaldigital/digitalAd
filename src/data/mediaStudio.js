@@ -16,7 +16,7 @@ const mediaStudio = {
         "Create powerful visual stories that strengthen your brand and connect with your audience.",
 
     description:
-        "AD Digital Solutions combines technology and professional media production under one roof. From podcasts and corporate films to reels, live streaming and commercial campaigns, our in-house studio helps businesses create impactful digital content without coordinating with multiple vendors.",
+        "First Signal Digital combines technology and professional media production under one roof. From podcasts and corporate films to reels, live streaming and commercial campaigns, our in-house studio helps businesses create impactful digital content without coordinating with multiple vendors.",
 
     buttonText: "Book a Studio Visit",
 

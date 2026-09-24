@@ -11,10 +11,19 @@ import ConnectCard from "/src/components/snapshot/ConnectCard";
 import MediaStudioCard from "../components/snapshot/MediaStudioCard";
 import IndustriesCard from "../components/snapshot/IndustriesCard";
 
+import SEO from "/src/components/SEO";
+import keywordMap from "/src/data/keywordMap";
 
 export default function BusinessSnapshot() {
+    const kw = keywordMap["/snapshot"];
     return (
-        <main className="min-h-screen bg-slate-950 py-12 lg:py-16">
+        <div className="min-h-screen bg-blue-950 py-12 lg:py-16">
+
+            <SEO
+                route="/snapshot"
+                title={kw.title}
+                description={kw.metaDescription}
+            />
 
             {/* Background Glow */}
 
@@ -73,6 +82,6 @@ export default function BusinessSnapshot() {
 
             </div>
 
-        </main>
+        </div>
     );
 }

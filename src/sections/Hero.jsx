@@ -1,24 +1,18 @@
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  PlayCircle,
   CheckCircle2,
   Globe,
   Smartphone,
   MonitorSmartphone,
   BrainCircuit,
+  MapPin,
 } from "lucide-react";
-
-const stats = [
-  { value: "500+", label: "Projects Delivered" },
-  { value: "50+", label: "Experts" },
-  { value: "20+", label: "SaaS Products" },
-  { value: "100%", label: "Custom Solutions" },
-];
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white">
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white">
 
       {/* Background */}
 
@@ -44,79 +38,66 @@ export default function Hero() {
 
             <span className="inline-flex items-center rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm text-blue-300">
 
-              Digital Transformation & Media Solutions
+              Rohtak, Haryana • Serving India
 
             </span>
 
             <h1 className="mt-8 text-5xl md:text-6xl xl:text-7xl font-black leading-tight">
 
-              Building
+              Digital Marketing
 
-              <span className="text-blue-400"> Digital </span>
+              <span className="text-cyan-400"> & Technology </span>
 
-              Experiences
+              Solutions
 
               <br />
 
-              That Grow
+              for Growing
 
-              <span className="text-cyan-400"> Businesses</span>
+              <span className="text-blue-400"> Businesses</span>
 
             </h1>
 
+            <h2 className="mt-8 inline-flex flex-wrap items-center gap-3 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-5 py-3 text-lg font-semibold text-cyan-300">
+
+              <MapPin size={20} className="shrink-0" />
+
+              Digital Marketing, Technology &amp; Media Services in Rohtak
+
+            </h2>
+
             <p className="mt-8 max-w-2xl text-lg text-slate-300 leading-8">
 
-              We empower startups, enterprises and organizations through
-              intelligent technology, AI solutions, digital branding,
-              mobile applications, business automation, media production,
-              marketing and scalable SaaS platforms.
+              First Signal Digital is a digital marketing, technology and media
+              company based in Rohtak, Haryana. We help startups, local
+              businesses and enterprises grow with SEO, Google Ads, websites,
+              AI automation, software and professional media production.
 
             </p>
 
             <div className="mt-10 flex flex-wrap gap-5">
 
-              <button className="rounded-full bg-blue-600 hover:bg-blue-700 px-7 py-4 font-semibold flex items-center gap-3 transition">
+              <Link
+                to="/contact"
+                className="rounded-full bg-blue-600 hover:bg-blue-700 px-7 py-4 font-semibold flex items-center gap-3 transition"
+              >
 
                 Start Your Project
 
                 <ArrowRight size={20} />
 
-              </button>
+              </Link>
 
-              <button className="rounded-full border border-white/20 bg-white/5 backdrop-blur hover:bg-white/10 px-7 py-4 font-semibold flex items-center gap-3 transition">
+              <Link
+                to="/about"
+                className="rounded-full border border-white/20 bg-white/5 backdrop-blur hover:bg-white/10 px-7 py-4 font-semibold flex items-center gap-3 transition"
+              >
 
-                <PlayCircle size={20} />
+                Explore Company Profile
 
-                Watch Company Profile
+                <ArrowRight size={20} />
 
-              </button>
-
-            </div>
-
-            <div className="mt-12 grid grid-cols-2 gap-5">
-
-              {stats.map((item) => (
-
-                <div
-                  key={item.label}
-                  className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-lg p-6"
-                >
-
-                  <h2 className="text-3xl font-bold">
-
-                    {item.value}
-
-                  </h2>
-
-                  <p className="mt-2 text-slate-300">
-
-                    {item.label}
-
-                  </p>
-
-                </div>
-
-              ))}
+              </Link>
 
             </div>
 
@@ -201,7 +182,7 @@ export default function Hero() {
 
 function Card({ icon, title, text }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-slate-900/40 p-5 hover:bg-slate-800/50 transition">
+    <div className="rounded-2xl border border-white/10 bg-blue-900/40 p-5 hover:bg-blue-800/60 transition">
 
       <div className="flex items-center gap-4">
 

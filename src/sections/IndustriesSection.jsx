@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import SectionTitle from "/src/components/ui/SectionTitle";
 import industries from "/src/data/industries";
 
 export default function IndustriesSection() {
     return (
-        <section className="relative overflow-hidden bg-slate-950 py-28">
+        <section className="relative overflow-hidden bg-blue-950 py-28">
 
             {/* Background */}
 
@@ -75,13 +76,16 @@ export default function IndustriesSection() {
 
                                 </p>
 
-                                <button className="mt-8 flex items-center gap-2 font-semibold text-cyan-400 transition group-hover:translate-x-1">
+                                <Link
+                                    to="/services"
+                                    className="mt-8 flex items-center gap-2 font-semibold text-cyan-400 transition group-hover:translate-x-1"
+                                >
 
                                     Explore Solutions
 
                                     <ArrowRight size={18} />
 
-                                </button>
+                                </Link>
 
                             </motion.div>
 

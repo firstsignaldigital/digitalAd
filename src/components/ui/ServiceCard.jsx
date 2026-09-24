@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function ServiceCard({
     title,
     description,
     icon: Icon,
+    to,
 }) {
-    return (
+    const card = (
         <motion.article
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -15,7 +17,7 @@ export default function ServiceCard({
             whileHover={{
                 y: -10,
             }}
-            className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-2xl"
+            className="group relative h-full overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-2xl"
         >
             {/* Top Accent */}
 
@@ -61,7 +63,7 @@ export default function ServiceCard({
 
                     <span className="text-sm font-semibold tracking-wide uppercase text-blue-600">
 
-                        Explore Service
+                        {to ? `Explore ${title}` : title}
 
                     </span>
 
@@ -76,4 +78,14 @@ export default function ServiceCard({
             </div>
         </motion.article>
     );
+
+    if (to) {
+        return (
+            <Link to={to} className="block h-full">
+                {card}
+            </Link>
+        );
+    }
+
+    return card;
 }

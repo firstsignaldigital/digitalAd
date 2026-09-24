@@ -11,6 +11,9 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import SEO from "/src/components/SEO";
+import keywordMap from "/src/data/keywordMap";
+
 const expertise = [
     {
         icon: Cpu,
@@ -60,10 +63,17 @@ const differentiators = [
 ];
 
 export default function About() {
+    const kw = keywordMap["/about"];
     return (
         <>
+            <SEO
+                route="/about"
+                title={kw.title}
+                description={kw.metaDescription}
+            />
+
             {/* Hero */}
-            <section className="bg-linear-to-br from-slate-950 via-blue-950 to-slate-900 pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-36 lg:pb-24 text-white">
+            <section className="bg-linear-to-br from-blue-950 via-blue-900 to-blue-800 pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-36 lg:pb-24 text-white">
                 <div className="mx-auto max-w-7xl px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 25 }}
@@ -72,7 +82,7 @@ export default function About() {
                         className="max-w-4xl"
                     >
                         <span className="rounded-full bg-cyan-500/15 px-4 py-2 text-xs font-semibold tracking-[0.3em] uppercase text-cyan-300">
-                            ABOUT AD DIGITAL SOLUTIONS
+                            ABOUT FIRST SIGNAL DIGITAL
                         </span>
 
                         <h1 className="mt-8 text-5xl font-bold leading-tight md:text-6xl">
@@ -83,7 +93,7 @@ export default function About() {
                         </h1>
 
                         <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300">
-                            AD Digital Solutions combines digital strategy,
+                            First Signal Digital combines digital strategy,
                             enterprise technology, artificial intelligence,
                             creative media and business consulting to help
                             organisations modernize, automate and grow.
@@ -120,7 +130,7 @@ export default function About() {
                         </p>
                     </div>
 
-                    <div className="rounded-[32px] bg-slate-900 p-10 text-white shadow-2xl">
+                    <div className="rounded-[32px] bg-blue-900 p-10 text-white shadow-2xl">
                         <h3 className="text-2xl font-bold">
                             Why Businesses Choose Us
                         </h3>
@@ -178,7 +188,7 @@ export default function About() {
             </section>
 
             {/* CTA */}
-            <section className="bg-slate-950 py-24 text-white">
+            <section className="bg-blue-950 py-24 text-white">
                 <div className="mx-auto max-w-5xl px-6 text-center">
                     <h2 className="text-4xl font-bold">
                         Ready to Transform Your Business?

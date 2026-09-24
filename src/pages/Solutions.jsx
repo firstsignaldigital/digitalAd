@@ -1,57 +1,24 @@
 import { motion } from "framer-motion";
 import {
     ArrowRight,
-    CheckCircle2,
-    Building2,
-    Users,
-    Clock3,
-    Briefcase,
-    GraduationCap,
-    ShieldCheck,
     Cloud,
-    Smartphone,
     Monitor,
+    Smartphone,
     Cpu,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const platforms = [
-    {
-        icon: Users,
-        title: "HRMS & Attendance Platform",
-        description:
-            "Employee attendance, leave management, payroll integration, geo check-in/out, reports and dashboards.",
-    },
-    {
-        icon: Building2,
-        title: "CRM & Sales Automation",
-        description:
-            "Lead management, customer lifecycle, quotations, follow-ups and sales analytics.",
-    },
-    {
-        icon: Briefcase,
-        title: "Custom ERP Solutions",
-        description:
-            "Operations, inventory, finance, procurement and workflow automation tailored to your business.",
-    },
-    {
-        icon: GraduationCap,
-        title: "Education Management",
-        description:
-            "Student management, admissions, attendance, online learning and parent communication.",
-    },
-    {
-        icon: Clock3,
-        title: "Appointment & Booking",
-        description:
-            "Scheduling, reminders, calendars, payments and customer self-service portals.",
-    },
-    {
-        icon: ShieldCheck,
-        title: "Business Compliance",
-        description:
-            "Document workflows, approvals, audits and compliance management systems.",
-    },
+import SEO from "/src/components/SEO";
+import keywordMap from "/src/data/keywordMap";
+import solutions, { implementationProcess } from "/src/data/solutions";
+import services from "/src/data/servicesDetail";
+import SolutionCard from "/src/components/solutions/SolutionCard";
+import ServiceCard from "/src/components/ui/ServiceCard";
+
+const categoryOrder = [
+    "Business Systems",
+    "Industry Solutions",
+    "Business Operations",
 ];
 
 const technologies = [
@@ -88,12 +55,23 @@ const deployment = [
     },
 ];
 
+const relatedServices = ["software-development", "ai-solutions", "website-development", "mobile-app-development"]
+    .map((slug) => services[slug])
+    .filter(Boolean);
+
 export default function Solutions() {
+    const kw = keywordMap["/solutions"];
     return (
         <>
+            <SEO
+                route="/solutions"
+                title={kw.title}
+                description={kw.metaDescription}
+            />
+
             {/* HERO */}
 
-            <section className="bg-linear-to-br from-slate-950 via-blue-950 to-slate-900 pt-36 pb-24 text-white">
+            <section className="bg-linear-to-br from-blue-950 via-blue-900 to-blue-800 pt-36 pb-24 text-white">
 
                 <div className="mx-auto max-w-7xl px-6">
 
@@ -112,20 +90,48 @@ export default function Solutions() {
 
                         <h1 className="mt-8 text-5xl font-bold md:text-6xl">
 
-                            Custom Platforms Built
+                            Business Software
                             <span className="block text-cyan-300">
-                                Around Your Business.
+                                Solutions.
                             </span>
 
                         </h1>
 
                         <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-300">
 
-                            We build secure, scalable and intelligent SaaS
-                            platforms that streamline operations, automate
-                            workflows and accelerate business growth.
+                            We design, build and support software platforms —
+                            CRM, ERP, HRMS, school ERP, hospital systems,
+                            dashboards and more — tailored to the way your
+                            business actually works. Based in Rohtak, Haryana,
+                            and serving clients across India.
 
                         </p>
+
+                        <div className="mt-10 flex flex-wrap gap-5">
+
+                            <Link
+                                to="/contact"
+                                className="inline-flex items-center gap-3 rounded-full bg-cyan-500 px-7 py-4 font-semibold text-slate-900 transition hover:scale-105"
+                            >
+
+                                Discuss Your Solution
+
+                                <ArrowRight size={18} />
+
+                            </Link>
+
+                            <Link
+                                to="/services/software-development"
+                                className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-7 py-4 font-semibold backdrop-blur transition hover:bg-white/10"
+                            >
+
+                                Software Engineering
+
+                                <ArrowRight size={18} />
+
+                            </Link>
+
+                        </div>
 
                     </motion.div>
 
@@ -133,92 +139,69 @@ export default function Solutions() {
 
             </section>
 
-            {/* FEATURED */}
+            {/* SOLUTION CATEGORIES */}
 
-            <section className="pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-36 lg:pb-24">
+            {categoryOrder.map((category) => {
 
-                <div className="mx-auto max-w-7xl px-6">
+                const items = Object.values(solutions).filter(
+                    (solution) => solution.category === category
+                );
 
-                    <div className="rounded-[36px] bg-linear-to-r from-blue-700 to-cyan-600 p-10 text-white shadow-2xl lg:p-16">
+                if (items.length === 0) {
+                    return null;
+                }
 
-                        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+                return (
 
-                            <div>
+                    <section
+                        key={category}
+                        className="bg-white py-24"
+                    >
 
-                                <span className="text-sm uppercase tracking-[0.3em]">
+                        <div className="mx-auto max-w-7xl px-6">
 
-                                    FEATURED PLATFORM
+                            <div className="text-center max-w-3xl mx-auto">
+
+                                <span className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-700">
+
+                                    {category.toUpperCase()}
 
                                 </span>
 
-                                <h2 className="mt-5 text-4xl font-bold">
+                                <h2 className="mt-5 text-4xl font-bold text-slate-900">
 
-                                    Smart Workforce &
-                                    Attendance Platform
+                                    {category}
 
                                 </h2>
 
-                                <p className="mt-6 text-lg leading-8 text-blue-50">
-
-                                    Geo attendance, facial recognition,
-                                    leave management, payroll integration,
-                                    analytics, mobile apps and real-time
-                                    workforce visibility.
-
-                                </p>
-
-                                <Link
-                                    to="/contact"
-                                    className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-7 py-4 font-semibold text-blue-700"
-                                >
-
-                                    Request Demo
-
-                                    <ArrowRight size={18} />
-
-                                </Link>
-
                             </div>
 
-                            <div className="rounded-[28px] bg-white/10 p-8 backdrop-blur">
+                            <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
 
-                                <div className="space-y-5">
+                                {items.map((solution) => (
 
-                                    {[
-                                        "Geo Check-In / Check-Out",
-                                        "Live Dashboard",
-                                        "Attendance Reports",
-                                        "Leave Management",
-                                        "Payroll Ready",
-                                        "Admin Portal",
-                                    ].map((item) => (
+                                    <SolutionCard
+                                        key={solution.slug}
+                                        title={solution.name}
+                                        icon={solution.icon}
+                                        category={solution.category}
+                                        description={solution.short}
+                                        to={`/solutions/${solution.slug}`}
+                                    />
 
-                                        <div
-                                            key={item}
-                                            className="flex items-center gap-3"
-                                        >
-
-                                            <CheckCircle2 className="text-cyan-200" />
-
-                                            {item}
-
-                                        </div>
-
-                                    ))}
-
-                                </div>
+                                ))}
 
                             </div>
 
                         </div>
 
-                    </div>
+                    </section>
 
-                </div>
+                );
 
-            </section>
+            })}
 
-            {/* PLATFORM PORTFOLIO */}
+            {/* HOW SOLUTIONS ARE DEVELOPED */}
 
             <section className="bg-slate-50 py-24">
 
@@ -228,58 +211,46 @@ export default function Solutions() {
 
                         <span className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-700">
 
-                            PLATFORM PORTFOLIO
+                            HOW SOLUTIONS ARE BUILT
 
                         </span>
 
-                        <h2 className="mt-5 text-4xl font-bold">
+                        <h2 className="mt-5 text-4xl font-bold text-slate-900">
 
-                            Solutions That Scale With Your Business
+                            From Discovery To Ongoing Support
 
                         </h2>
 
+                        <p className="mt-6 text-lg leading-8 text-slate-600">
+
+                            Every platform is scoped around your business first.
+                            One team designs, builds, launches and supports it
+                            end to end.
+
+                        </p>
+
                     </div>
 
-                    <div className="mt-16 space-y-8">
+                    <div className="mt-16 grid gap-6 md:grid-cols-3">
 
-                        {platforms.map((item) => {
+                        {implementationProcess.map((step, index) => (
 
-                            const Icon = item.icon;
+                            <div
+                                key={step}
+                                className="rounded-[28px] bg-white p-8 shadow-md"
+                            >
 
-                            return (
-
-                                <div
-                                    key={item.title}
-                                    className="flex flex-col gap-6 rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm transition hover:shadow-xl md:flex-row md:items-center"
-                                >
-
-                                    <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-cyan-100">
-
-                                        <Icon className="text-cyan-700" />
-
-                                    </div>
-
-                                    <div className="flex-1">
-
-                                        <h3 className="text-2xl font-bold text-slate-900">
-
-                                            {item.title}
-
-                                        </h3>
-
-                                        <p className="mt-3 leading-7 text-slate-600">
-
-                                            {item.description}
-
-                                        </p>
-
-                                    </div>
-
+                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-600 font-bold text-white">
+                                    {index + 1}
                                 </div>
 
-                            );
+                                <h3 className="mt-5 font-semibold text-slate-900">
+                                    {step}
+                                </h3>
 
-                        })}
+                            </div>
+
+                        ))}
 
                     </div>
 
@@ -287,7 +258,7 @@ export default function Solutions() {
 
             </section>
 
-            {/* TECHNOLOGY */}
+            {/* TECHNOLOGY + DEPLOYMENT */}
 
             <section className="py-24">
 
@@ -303,7 +274,7 @@ export default function Solutions() {
 
                             </span>
 
-                            <h2 className="mt-5 text-4xl font-bold">
+                            <h2 className="mt-5 text-4xl font-bold text-slate-900">
 
                                 Modern Technologies For Modern Businesses
 
@@ -343,7 +314,7 @@ export default function Solutions() {
 
                                         <Icon className="text-cyan-600" />
 
-                                        <h3 className="mt-6 text-xl font-bold">
+                                        <h3 className="mt-6 text-xl font-bold text-slate-900">
 
                                             {item.title}
 
@@ -363,9 +334,59 @@ export default function Solutions() {
 
             </section>
 
+            {/* RELATED SERVICES */}
+
+            <section className="bg-slate-50 py-24">
+
+                <div className="mx-auto max-w-7xl px-6">
+
+                    <div className="text-center max-w-3xl mx-auto">
+
+                        <span className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-700">
+
+                            WE ALSO OFFER
+
+                        </span>
+
+                        <h2 className="mt-5 text-4xl font-bold text-slate-900">
+
+                            Related Services
+
+                        </h2>
+
+                        <p className="mt-6 text-lg leading-8 text-slate-600">
+
+                            Platforms are only part of the journey. Our services
+                            cover the software, websites, AI and marketing that
+                            surround your product.
+
+                        </p>
+
+                    </div>
+
+                    <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+
+                        {relatedServices.map((item) => (
+
+                            <ServiceCard
+                                key={item.slug}
+                                title={item.name}
+                                icon={item.icon}
+                                description={item.short}
+                                to={`/services/${item.slug}`}
+                            />
+
+                        ))}
+
+                    </div>
+
+                </div>
+
+            </section>
+
             {/* CTA */}
 
-            <section className="bg-slate-950 py-24 text-white">
+            <section className="bg-blue-950 py-24 text-white">
 
                 <div className="mx-auto max-w-4xl px-6 text-center">
 

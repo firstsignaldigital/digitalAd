@@ -4,12 +4,14 @@ import {
     Sparkles,
     CheckCircle2,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function ProductCard({
     title,
     category,
     description,
     icon: Icon,
+    to,
 }) {
     return (
         <motion.article
@@ -108,7 +110,10 @@ export default function ProductCard({
 
                     </div>
 
-                    <button className="flex items-center gap-2 font-semibold text-slate-900 transition-all group-hover:text-blue-600">
+                    <Link
+                        to={to || "/solutions"}
+                        className="flex items-center gap-2 font-semibold text-slate-900 transition-all group-hover:text-blue-600"
+                    >
 
                         Learn More
 
@@ -117,7 +122,7 @@ export default function ProductCard({
                             className="transition-transform duration-300 group-hover:translate-x-1"
                         />
 
-                    </button>
+                    </Link>
 
                 </div>
 

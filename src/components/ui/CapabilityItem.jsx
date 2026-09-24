@@ -3,6 +3,7 @@ import {
     ArrowRight,
     ChevronDown,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function CapabilityItem({
     capability,
@@ -161,13 +162,16 @@ export default function CapabilityItem({
 
                             {/* CTA */}
 
-                            <button className="mt-10 inline-flex items-center gap-2 font-semibold text-blue-600 transition hover:gap-3">
+                            <Link
+                                to={capability.url || "/services"}
+                                className="mt-10 inline-flex items-center gap-2 font-semibold text-blue-600 transition hover:gap-3"
+                            >
 
                                 Explore Capability
 
                                 <ArrowRight size={18} />
 
-                            </button>
+                            </Link>
 
                         </motion.div>
 

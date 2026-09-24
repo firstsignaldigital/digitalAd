@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import SectionTitle from "/src/components/ui/SectionTitle";
 import products from "/src/data/products";
@@ -38,6 +39,7 @@ export default function DigitalProductsSection() {
             category={product.category}
             description={product.description}
             icon={product.icon}
+            to={product.url}
         />
 
     ))}
@@ -62,11 +64,14 @@ export default function DigitalProductsSection() {
 
                     </p>
 
-                    <button className="mt-10 rounded-full bg-white px-8 py-4 font-semibold text-blue-700 transition hover:scale-105">
+                    <Link
+                        to="/contact"
+                        className="mt-10 inline-block rounded-full bg-white px-8 py-4 font-semibold text-blue-700 transition hover:scale-105"
+                    >
 
                         Discuss Your Product
 
-                    </button>
+                    </Link>
 
                 </div>
 

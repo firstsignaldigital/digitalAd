@@ -5,6 +5,7 @@ import {
     Sparkles,
     CheckCircle2,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import SectionTitle from "/src/components/ui/SectionTitle";
 import CapabilityItem from "/src/components/ui/CapabilityItem";
@@ -170,11 +171,15 @@ export default function CapabilitiesSection() {
 
                                         </div>
 
-                                        <button className="flex h-14 w-14 items-center justify-center rounded-full bg-white text-blue-700 transition hover:scale-110">
+                                        <Link
+                                        to="/services"
+                                        className="flex h-14 w-14 items-center justify-center rounded-full bg-white text-blue-700 transition hover:scale-110"
+                                        aria-label="Explore all services"
+                                    >
 
-                                            <ArrowUpRight size={22} />
+                                        <ArrowUpRight size={22} />
 
-                                        </button>
+                                    </Link>
 
                                     </div>
 

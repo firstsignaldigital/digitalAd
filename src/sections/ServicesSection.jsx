@@ -27,7 +27,7 @@ export default function ServicesSection() {
                     badge="OUR CAPABILITIES"
                     title="Everything Your Business Needs To"
                     highlight="Grow Digitally"
-                    description="From strategy and branding to AI, software engineering and media production, Modern Concepts delivers complete digital transformation services under one roof."
+                    description="From strategy and branding to AI, software engineering and media production, First Signal Digital delivers complete digital transformation services under one roof."
                 />
 
                 {/* Services */}
@@ -59,6 +59,7 @@ export default function ServicesSection() {
                                 title={service.title}
                                 description={service.description}
                                 icon={service.icon}
+                                to={service.to}
                             />
 
                         </motion.div>
@@ -117,7 +118,7 @@ export default function ServicesSection() {
 
                             </div>
 
-                            <PrimaryButton className="shrink-0">
+                            <PrimaryButton to="/contact" className="shrink-0">
 
                                 Schedule Consultation
 
