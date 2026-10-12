@@ -11,7 +11,12 @@ import {
 
 import App from "./App";
 
+import { initializeMeasurement } from "./utils/analytics";
+
 import "./index.css";
+
+
+initializeMeasurement();
 
 
 ReactDOM

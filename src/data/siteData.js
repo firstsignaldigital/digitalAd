@@ -4,6 +4,10 @@ export const SITE_URL = (
 
 export const SITE_NAME = "First Signal Digital";
 
+// Google Tag Manager container for this site. GTM IDs are public (they appear
+// in the page source), so a default is safe; a Vercel env var can still override.
+export const GTM_ID = import.meta.env.VITE_GTM_ID || "GTM-NSZH3BVW";
+
 /**
  * This entity — First Signal Digital.
  * Geo coordinates are intentionally NOT set: no trusted coordinates exist in
