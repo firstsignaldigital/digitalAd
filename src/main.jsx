@@ -19,9 +19,9 @@ import "./index.css";
 initializeMeasurement();
 
 
-ReactDOM
-.createRoot(document.getElementById("root"))
-.render(
+const container = document.getElementById("root");
+
+const tree = (
 
     <BrowserRouter>
 
@@ -34,3 +34,17 @@ ReactDOM
     </BrowserRouter>
 
 );
+
+
+// Prerendered pages ship with server-rendered markup in #root, so they are
+// hydrated. In `vite dev` (and any unexpected empty shell) the container is
+// empty, so React mounts normally instead.
+if (container.firstElementChild) {
+
+    ReactDOM.hydrateRoot(container, tree);
+
+} else {
+
+    ReactDOM.createRoot(container).render(tree);
+
+}
