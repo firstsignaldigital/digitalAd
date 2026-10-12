@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Real files and directories are served untouched (assets, images, robots.txt, sitemap.xml, favicon.svg)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Serve the SPA shell only for the real application routes (case-insensitive,
+  # optional trailing slash). Any other non-existent path is deliberately left
+  # alone so Apache returns its normal 404.
+  RewriteCond %{REQUEST_URI} ^/(|snapshot|about|services|solutions|marketing|studio|contact|privacy-policy|terms|services/seo|services/google-ads|services/social-media-marketing|services/lead-generation|services/branding|services/website-development|services/software-development|services/mobile-app-development|services/ai-solutions|services/media-production|services/cloud-solutions|services/database-solutions|services/cyber-security|services/digital-transformation|solutions/crm|solutions/erp|solutions/hrms|solutions/dashboards|solutions/education-management|solutions/hospital-management|solutions/appointment-booking|solutions/inventory-management|solutions/billing-and-pos|solutions/business-compliance)/?$ [NC]
+  RewriteRule ^ index.html [L]
+</IfModule>

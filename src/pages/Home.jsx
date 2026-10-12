@@ -5,6 +5,7 @@ import DigitalProductsSection from "../sections/DigitalProductsSection";
 import IndustriesSection from "../sections/IndustriesSection";
 import RohtakSection from "../sections/RohtakSection";
 import MediaStudioSection from "../sections/MediaStudioSection";
+import OurNetwork from "../components/OurNetwork";
 import FooterCTA from "/src/components/layout/FooterCTA";
 import SEO from "/src/components/SEO";
 import keywordMap from "/src/data/keywordMap";
@@ -32,6 +33,8 @@ export default function Home() {
             <RohtakSection />
 
             <MediaStudioSection />
+
+            <OurNetwork />
 
             <FooterCTA/>
         </>

@@ -14,7 +14,8 @@ export default function SEO({
     ogImage = `${SITE_URL}/logo.jpeg`,
     ogType = "website",
     ogSiteName = "First Signal Digital",
-    twitterCard = "summary",
+    ogLocale = "en_IN",
+    twitterCard = "summary_large_image",
     twitterTitle,
     twitterDescription,
     breadcrumbs,
@@ -65,11 +66,13 @@ export default function SEO({
             <meta property="og:url" content={ogUrl || url} />
             <meta property="og:type" content={ogType} />
             <meta property="og:site_name" content={ogSiteName} />
+            <meta property="og:locale" content={ogLocale} />
             <meta property="og:image" content={image} />
             <meta property="og:image:alt" content="First Signal Digital logo" />
             <meta name="twitter:card" content={twitterCard} />
             <meta name="twitter:title" content={twitterTitle || title} />
             <meta name="twitter:description" content={twitterDescription || description} />
+            <meta name="twitter:image" content={image} />
             {breadcrumbJsonLd && (
                 <script type="application/ld+json">
                     {breadcrumbJsonLd}

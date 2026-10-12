@@ -2,7 +2,9 @@ import {
     FaFacebookF,
     FaInstagram,
     FaWhatsapp,
+    FaYoutube,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const socials = [
     {
@@ -13,9 +15,21 @@ const socials = [
     },
     {
         name: "Instagram",
-        href: "https://www.instagram.com/firstsignaldigital8/",
+        href: "https://www.instagram.com/firstsignaldigital/",
         icon: FaInstagram,
         bg: "bg-gradient-to-br from-[#f09433] via-[#e1306c] to-[#8134af]",
+    },
+    {
+        name: "X",
+        href: "https://x.com/1stsignldigital",
+        icon: FaXTwitter,
+        bg: "bg-black",
+    },
+    {
+        name: "YouTube",
+        href: "https://www.youtube.com/@FirstsignalDigital",
+        icon: FaYoutube,
+        bg: "bg-[#FF0000]",
     },
     {
         name: "WhatsApp",

@@ -192,12 +192,12 @@ export const businessSnapshot = {
     {
         icon: FaInstagram,
         title: "Instagram",
-        url: "https://www.instagram.com/firstsignaldigital8/",
+        url: "https://www.instagram.com/firstsignaldigital/",
     },
     {
         icon: FaYoutube,
         title: "YouTube",
-        url: "#",
+        url: "https://www.youtube.com/@FirstsignalDigital",
     },
     {
         icon: FaWhatsapp,
