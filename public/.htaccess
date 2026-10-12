@@ -2,7 +2,7 @@
   RewriteEngine On
   RewriteBase /
 
-  # Real files and directories are served untouched (assets, images, robots.txt, sitemap.xml, favicon.svg)
+  # Real files and directories are served untouched (assets, images, robots.txt, sitemap.xml, favicons)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
 
